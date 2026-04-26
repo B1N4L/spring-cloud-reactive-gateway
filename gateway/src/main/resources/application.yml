@@ -16,3 +16,6 @@ logging:
     root: INFO
     com.microservices.gateway: INFO
     org.springframework.cloud.gateway: INFO
+
+jwt:
+  secret: your-super-secret-key-must-be-32-chars-minimum

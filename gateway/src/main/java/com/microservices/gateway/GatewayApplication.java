@@ -19,6 +19,13 @@ public class GatewayApplication {
 		return builder.routes()
 
 				// ----------------- service-a -----------------
+				.route(r -> r.path("/auth/**")
+						.filters(f -> f
+//								.stripPrefix(1)
+								.addResponseHeader("X-Response-Header", "ApiGateway"))
+						.uri("http://localhost:8085"))
+
+				// ----------------- service-a -----------------
 				.route(r -> r.path("/service-a/**")
 						.filters(f -> f
 								.stripPrefix(1)
